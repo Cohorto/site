@@ -1,75 +1,79 @@
+// scripts.js
+
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-// Hero Section Animation
-gsap.from(".hero-content", {
-  opacity: 0,
-  y: 50,
-  duration: 1,
-  scrollTrigger: {
-    trigger: ".hero-section",
-    start: "top 80%",
-    end: "top 50%",
-    toggleActions: "play none none reverse",
+// Create a single timeline for smoother animations
+const tl = gsap.timeline({
+  defaults: {
+    ease: "power2.out",
+    duration: 0.8,
   },
 });
 
-// Why Cohorto Section Animation
-gsap.from(".why-cohorto-content", {
+// Initial page load animation for hero section
+tl.from(".hero-content", {
   opacity: 0,
-  y: 50,
+  y: 20,
   duration: 1,
-  scrollTrigger: {
-    trigger: ".why-cohorto-section",
-    start: "top 80%",
+});
+
+// Scroll-triggered animations using best practices
+ScrollTrigger.batch(".why-cohorto-content > *", {
+  onEnter: (elements) => {
+    gsap.from(elements, {
+      opacity: 0,
+      y: 20,
+      stagger: 0.15,
+      duration: 0.8,
+      ease: "power2.out",
+    });
   },
+  start: "top 85%",
+  once: true, // Only animate once
 });
 
-// Meet the Cohorts Animation
-gsap.from(".meet-the-cohorts-content .bg-light-cream", {
-  opacity: 0,
-  y: 50,
-  duration: 1,
-  stagger: 0.3,
-  scrollTrigger: {
-    trigger: ".meet-the-cohorts-content",
-    start: "top 80%",
+ScrollTrigger.batch(".meet-the-cohorts-content .bg-lightCream", {
+  onEnter: (elements) => {
+    gsap.from(elements, {
+      opacity: 0,
+      y: 20,
+      stagger: 0.15,
+      duration: 0.8,
+      ease: "power2.out",
+    });
   },
+  start: "top 85%",
+  once: true,
 });
 
-// Testimonials Animations
-gsap.utils.toArray(".testimonials-grid > div").forEach((testimonial, i) => {
-  gsap.from(testimonial, {
-    x: i % 2 === 0 ? -100 : 100,
-    opacity: 0,
-    duration: 1,
-    scrollTrigger: {
-      trigger: testimonial,
-      start: "top 85%",
-    },
-  });
+ScrollTrigger.batch(".testimonials-grid > div", {
+  onEnter: (elements) => {
+    gsap.from(elements, {
+      opacity: 0,
+      y: 20,
+      stagger: 0.15,
+      duration: 0.8,
+      ease: "power2.out",
+    });
+  },
+  start: "top 85%",
+  once: true,
 });
 
-// Toggle Mobile Menu
+// Toggle Mobile Menu (unchanged)
 const menuBtn = document.getElementById("menu-btn");
 const mobileMenu = document.getElementById("mobile-menu");
 
 menuBtn.addEventListener("click", () => {
   if (mobileMenu.classList.contains("hidden")) {
-    gsap.to(mobileMenu, {
-      height: "auto",
-      duration: 0.5,
-      ease: "power2.inOut",
-    });
-    mobileMenu.classList.remove("hidden");
+    mobileMenu.classList.remove("hidden", "opacity-0", "pointer-events-none");
+    mobileMenu.classList.add("opacity-100", "pointer-events-auto");
   } else {
-    gsap.to(mobileMenu, {
-      height: 0,
-      duration: 0.5,
-      ease: "power2.inOut",
-      onComplete: () => {
-        mobileMenu.classList.add("hidden");
-      },
-    });
+    mobileMenu.classList.remove("opacity-100", "pointer-events-auto");
+    mobileMenu.classList.add("opacity-0", "pointer-events-none");
+    setTimeout(() => {
+      mobileMenu.classList.add("hidden");
+    }, 500);
   }
 });
