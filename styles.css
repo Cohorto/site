@@ -1,44 +1,48 @@
 /* Custom Styling */
 body {
-    font-family: "Geist", sans-serif;
-    background-color: #f6f4ef; /* Cream */
-    color: #1a1a1a; /* Black */
+  font-family: "Geist", sans-serif;
+  background-color: #f6f4ef; /* Cream */
+  color: #1a1a1a; /* Black */
+  overflow-x: hidden;
 }
 
 .bg-cream {
-    background-color: #f6f4ef; /* Cream */
+  background-color: #f6f4ef; /* Cream */
 }
 
 .text-cream {
-    color: #f6f4ef;
+  color: #f6f4ef;
 }
 
 .bg-black {
-    background-color: #1a1a1a;
+  background-color: #1a1a1a;
 }
 
 .text-black {
-    color: #1a1a1a;
+  color: #1a1a1a;
 }
 
 .bg-light-cream {
-    background-color: #f9f7f1; /* Slightly lighter cream */
+  background-color: #f9f7f1; /* Slightly lighter cream */
 }
 
 .mono {
-    font-family: "Geist Mono", monospace;
+  font-family: "Geist Mono", monospace;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
+.navbar {
+  width: 100vw;
+}
+
+/* ::-webkit-scrollbar {
     width: 8px;
-}
-
-::-webkit-scrollbar-thumb {
+  }
+  
+  ::-webkit-scrollbar-thumb {
     background: #1a1a1a;
     border-radius: 8px;
-}
-
-::-webkit-scrollbar-thumb:hover {
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
     background: #333333;
-}
+  } */
