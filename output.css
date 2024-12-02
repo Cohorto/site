@@ -2361,10 +2361,6 @@ video {
   opacity: 0.1;
 }
 
-.opacity-100 {
-  opacity: 1;
-}
-
 .bg-blend-normal {
   background-blend-mode: normal;
 }
