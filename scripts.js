@@ -55,5 +55,21 @@ const menuBtn = document.getElementById("menu-btn");
 const mobileMenu = document.getElementById("mobile-menu");
 
 menuBtn.addEventListener("click", () => {
-  mobileMenu.classList.toggle("hidden");
+  if (mobileMenu.classList.contains("hidden")) {
+    gsap.to(mobileMenu, {
+      height: "auto",
+      duration: 0.5,
+      ease: "power2.inOut",
+    });
+    mobileMenu.classList.remove("hidden");
+  } else {
+    gsap.to(mobileMenu, {
+      height: 0,
+      duration: 0.5,
+      ease: "power2.inOut",
+      onComplete: () => {
+        mobileMenu.classList.add("hidden");
+      },
+    });
+  }
 });
