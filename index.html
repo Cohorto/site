@@ -30,23 +30,64 @@
                 />
                 <h1 class="text-xl font-bold tracking-wide">Cohorto</h1>
             </div>
-            <div class="flex items-center space-x-6">
+            <!-- Desktop Nav Links -->
+            <div class="hidden md:flex items-center space-x-6">
                 <a href="#" class="hover:text-gray-400">Features</a>
                 <a href="#" class="hover:text-gray-400">How It Works</a>
                 <a href="#" class="hover:text-gray-400">Testimonials</a>
                 <a
                     href="#"
                     class="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg"
-                    >Schedule a Call</a
                 >
+                    Schedule a Call
+                </a>
             </div>
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="block md:hidden focus:outline-none">
+                <!-- Menu Icon -->
+                <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"
+                    ></path>
+                </svg>
+            </button>
         </nav>
+
+        <!-- Mobile Menu -->
+        <div
+            id="mobile-menu"
+            class="hidden bg-black text-white md:hidden fixed top-16 w-full z-40"
+        >
+            <!-- Mobile Nav Links -->
+            <a href="#" class="block px-4 py-2 hover:bg-gray-700">Features</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-700"
+                >How It Works</a
+            >
+            <a href="#" class="block px-4 py-2 hover:bg-gray-700"
+                >Testimonials</a
+            >
+            <a
+                href="#"
+                class="block px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg"
+            >
+                Schedule a Call
+            </a>
+        </div>
 
         <!-- Hero Section -->
         <section
-            class="hero-section h-screen flex flex-col justify-center items-center bg-black text-cream relative overflow-hidden"
+            class="hero-section h-screen flex items-center justify-center bg-black text-cream relative overflow-hidden"
         >
-            <div class="text-center px-4 mt-16 hero-content">
+            <div class="text-center px-4 hero-content">
                 <h1 class="text-5xl md:text-6xl font-bold mb-4 text-cream">
                     Your Dream Team,
                     <span class="text-cream">Redefined</span>
@@ -55,7 +96,9 @@
                     Affordable, student-driven freelancing teams delivering
                     exceptional results.
                 </p>
-                <div class="space-x-4">
+                <div
+                    class="space-x-0 md:space-x-4 space-y-4 md:space-y-0 flex flex-col md:flex-row justify-center"
+                >
                     <a
                         href="#"
                         class="px-6 py-3 bg-cream hover:bg-gray-200 rounded-lg text-black text-lg font-medium transition-all"
@@ -143,12 +186,11 @@
                     class="bg-light-cream text-black p-6 rounded-lg shadow-lg flex flex-col items-center"
                 >
                     <!-- Optional icon or image -->
-                    <h3 class="text-2xl font-bold mb-2">
+                    <h3 class="text-2xl font-bold mb-2 text-center">
                         Software Development Cohort
                     </h3>
                     <p class="text-lg text-center">
-                        From front-end designs to back-end architecture, we've
-                        got it covered.
+                        A complete SWE team, to turn your ideas into reality.
                     </p>
                 </div>
                 <!-- Card 2 -->
