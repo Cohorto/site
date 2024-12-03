@@ -1,5 +1,4 @@
 // src/app/components/Testimonials.tsx
-"use client";
 
 export default function Testimonials() {
   return (
