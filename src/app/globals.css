@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: "Geist", sans-serif;
+    background-color: #f6f4ef;
+    color: #1a1a1a;
+    overflow-x: hidden;
+}
+
+.mono {
+    font-family: "Geist Mono", monospace;
+}
