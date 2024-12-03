@@ -1,5 +1,4 @@
 // src/app/components/MeetCohorts.tsx
-"use client";
 
 export default function MeetCohorts() {
   return (
